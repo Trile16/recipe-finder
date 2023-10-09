@@ -57,7 +57,7 @@ const App = () => {
                   ev.preventDefault();
 
                   const data = await axios.get(`/api/fullRecipe/${recipe.id}`);
-                  console.log(data);
+
                   window.open(data.data.sourceUrl);
                 }}
               >
