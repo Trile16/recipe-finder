@@ -14,7 +14,7 @@ apiRouter.get("/ingredients", async (req, res, next) => {
 apiRouter.get("/fullRecipe/:id", async (req, res, next) => {
   const { id } = req.params;
   const response = await fetch(
-    `https://api.spoonacular.com/recipes/${id}/information?apiKey=60635bdefb2746fa84d9f456e8861252`
+    `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.API_KEY}`
   );
   const data = await response.json();
   res.send(data);
