@@ -8,7 +8,6 @@ const Search = ({ search, setSearch, setRecipes }) => {
         onSubmit={async (ev) => {
           ev.preventDefault();
           const data = await axios.get(`/api/ingredients?search=${search}`);
-          console.log(data);
           setRecipes(data.data);
           setSearch("");
         }}
@@ -19,7 +18,6 @@ const Search = ({ search, setSearch, setRecipes }) => {
           value={search}
           onChange={(ev) => {
             setSearch(ev.target.value);
-            console.log(search);
           }}
         />
         <button>Search</button>

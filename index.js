@@ -23,6 +23,10 @@ app.get("/dist/main.js.map", (req, res) => res.sendFile(reactSourceMap));
 const styleSheet = path.join(__dirname, "styles.css");
 app.get("/styles.css", (req, res) => res.sendFile(styleSheet));
 
+app.use((err, req, res, next) => {
+  res.send(err);
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
