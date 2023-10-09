@@ -5,6 +5,8 @@ require("dotenv").config();
 const app = express();
 const path = require("path");
 
+app.use("/assets", express.static(path.join(__dirname, "assets")));
+
 const homePage = path.join(__dirname, "index.html");
 app.get("/", (req, res) => res.sendFile(homePage));
 

@@ -3,7 +3,9 @@ body {
   font-family: verdana;
   display: flex;
   justify-content: center;
-  background-color: gray;
+  background-image: url("/assets/recipe-finder-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   height: 100%;
 }
@@ -11,12 +13,15 @@ body {
 #root {
   width: 100%;
   height: fit-content;
-  max-width: 60rem;
+  min-height: 100%;
+  max-width: 55rem;
+  border: solid 1px black;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
+  margin: 0;
 }
 
 .recipe {
@@ -24,6 +29,10 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  border: solid 1px black;
+  padding: 1rem;
+  margin: 1rem;
+  margin-bottom: 0rem;
 }
 
 .ingredients {

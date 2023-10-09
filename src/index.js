@@ -8,7 +8,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   return (
     <>
-      <h1>What Should I Cook?</h1>
+      <h1>👨‍🍳 What Should I Cook? 👨‍🍳</h1>
       <p>
         Don't know what to make for your next meal? Input some ingredients that
         you have and we will find some recipes for you!
@@ -21,30 +21,36 @@ const App = () => {
               <h2>{recipe.title}</h2>
               <img src={recipe.image} alt={recipe.title} />
               <div className="ingredients">
-                <div className="ingredient-list">
-                  <h4>Missing Ingredients</h4>
-                  <ol>
-                    {recipe.missedIngredients.map((ingredient) => {
-                      return <li key={ingredient.id}>{ingredient.name}</li>;
-                    })}
-                  </ol>
-                </div>
-                <div className="ingredient-list">
-                  <h4>Used Ingredients</h4>
-                  <ol>
-                    {recipe.usedIngredients.map((ingredient) => {
-                      return <li key={ingredient.id}>{ingredient.name}</li>;
-                    })}
-                  </ol>
-                </div>
-                <div className="ingredient-list">
-                  <h4>Unused Ingredients</h4>
-                  <ol>
-                    {recipe.unusedIngredients.map((ingredient) => {
-                      return <li key={ingredient.id}>{ingredient.name}</li>;
-                    })}
-                  </ol>
-                </div>
+                {recipe.missedIngredients.length ? (
+                  <div className="ingredient-list">
+                    <h4>Missing Ingredients</h4>
+                    <ol>
+                      {recipe.missedIngredients.map((ingredient) => {
+                        return <li key={ingredient.id}>{ingredient.name}</li>;
+                      })}
+                    </ol>
+                  </div>
+                ) : null}
+                {recipe.usedIngredients.length ? (
+                  <div className="ingredient-list">
+                    <h4>Used Ingredients</h4>
+                    <ol>
+                      {recipe.usedIngredients.map((ingredient) => {
+                        return <li key={ingredient.id}>{ingredient.name}</li>;
+                      })}
+                    </ol>
+                  </div>
+                ) : null}
+                {recipe.unusedIngredients.length ? (
+                  <div className="ingredient-list">
+                    <h4>Unused Ingredients</h4>
+                    <ol>
+                      {recipe.unusedIngredients.map((ingredient) => {
+                        return <li key={ingredient.id}>{ingredient.name}</li>;
+                      })}
+                    </ol>
+                  </div>
+                ) : null}
               </div>
               <button
                 onClick={async (ev) => {
