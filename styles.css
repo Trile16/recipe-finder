@@ -1,3 +1,39 @@
+html,
 body {
   font-family: verdana;
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: fit-content;
+  max-width: 60rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.ingredients {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
