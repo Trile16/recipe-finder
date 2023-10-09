@@ -1,8 +1,10 @@
 const express = require("express");
 const apiRouter = require("./api");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+app.use(cors());
 const path = require("path");
 
 app.use("/assets", express.static(path.join(__dirname, "assets")));
